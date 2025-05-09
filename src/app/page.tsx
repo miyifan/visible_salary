@@ -145,7 +145,7 @@ export default function Home() {
     const [endHour, endMinute] = settings.endTime.split(":").map(Number);
     const end = new Date(now);
     end.setHours(endHour, endMinute, 0, 0);
-    let diff = end.getTime() - now.getTime();
+    const diff = end.getTime() - now.getTime();
     if (diff <= 0) return t('workFinished');
     const h = Math.floor(diff / (1000 * 60 * 60));
     const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
